@@ -1,0 +1,141 @@
+@import "../../responsive.scss";
+
+.homePage {
+  border-radius: 30%;
+  display: flex;
+  height: 100%;
+  background: linear-gradient(135deg, #ffffff, #000000); // Gradient background
+
+  .textContainer {
+    flex: 3;
+
+    .wrapper {
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
+      height: 100%;
+      color: #ffffff; // Text color
+
+      @include lg {
+        padding-right: 50px;
+      }
+
+      @include md {
+        padding: 0;
+      }
+
+      @include sm {
+        justify-content: flex-start;
+      }
+
+      .title {
+        padding-left: 10px;
+        font-size: 40px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // Text shadow for depth
+        animation: fadeInUp 1s ease-out; // Fade-in animation
+
+        @include lg {
+          font-size: 48px;
+        }
+      }
+
+      .boxes {
+        padding-left: 10px;
+
+        display: flex;
+        justify-content: space-between;
+        animation: fadeIn 1.5s ease-in; // Fade-in animation for boxes
+
+        @include sm {
+        padding-left: 10px;
+
+          display: none;
+        }
+
+        h1 {
+          font-size: 36px;
+        padding-left: 10px;
+
+
+          @include lg {
+        padding-left: 10px;
+
+            font-size: 32px;
+          }
+        }
+
+        h2 {
+        padding-left: 10px;
+
+          font-size: 20px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  .imgContainer {
+    
+    flex: 2;
+    background: linear-gradient(135deg, #c9c8c8, #3c3c3b); // Gradient background
+    border-radius: 3%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    animation: slideInRight 1s ease-out; // Slide-in animation
+
+    @include md {
+      display: none;
+    }
+
+    img {
+      width: 115%;
+      position: absolute;
+      right: 0;
+      transition: transform 0.5s ease; // Smooth image transition
+
+      &:hover {
+        transform: scale(1.05); // Scale up on hover
+      }
+
+      @include lg {
+        width: 105%;
+      }
+    }
+  }
+}
+
+// Keyframe animations
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
